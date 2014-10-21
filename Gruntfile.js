@@ -15,14 +15,17 @@ var grunt = function (g) {
     },
     uglify: {
       options: {
-        compress: {
-          drop_console: true
-        }
+        // TODO: remove before production
+        //compress: {
+        // drop_console: true
+        //},
+        sourceMap: true
+        //sourceMapIncludeSources: true
       },
       target: {
-        files: [{
-          src: ['src/fs.js'],
-          dest: ['dist/fs.min.js']
+        files:[{
+          src:'src/fs.js',
+          dest:'dist/fs.min.js'
         }]
       }
     }

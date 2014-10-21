@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>A friendly example</title>
+
+  <!-- need to load FunctionStack -->
+  <script src="../dist/fs.min.js"></script>
+</head>
+  <body>
+    <script>
+
+      window['_namespace'] = window['_namespace'] || {};
+
+      // first push fn to stack
+      window['_namespace'].fns = [];
+      window['_namespace'].fns.push(function() {
+        window['_namespace'].notImplemented();
+      });
+    </script>
+
+    <script>
+      // now load lib
+      setTimeout(function() {
+
+        window['_namespace'] = window['_namespace'] || {};
+
+        window['_namespace'].notImplemented = function() {
+          alert('implemented!');
+        };
+        // then turn array to FunctionStack
+        window['_namespace'].fns = FunctionStack(window['_namespace'].fns);
+      }, 500);
+    </script>
+  </body>
+</html>

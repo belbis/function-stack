@@ -40,31 +40,43 @@ and example html test:
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
+<head lang="en">
+  <meta charset="UTF-8">
   <title>A friendly example</title>
-  
+
   <!-- need to load FunctionStack -->
-  <script src="fs.min.js"></script>
+  <script src="../dist/fs.min.js"></script>
 </head>
   <body>
     <script>
-      // first push fn to stack 
-      var fns = [];
-      fns.push(function() {
-        notImplemented();
+
+      window['_namespace'] = window['_namespace'] || {};
+
+      // first push fn to stack
+      window['_namespace'].fns = [];
+      window['_namespace'].fns.push(function() {
+        window['_namespace'].notImplemented();
       });
     </script>
 
     <script>
       // now load lib
       setTimeout(function() {
-        var notImplemented = function() {
+
+        window['_namespace'] = window['_namespace'] || {};
+
+        window['_namespace'].notImplemented = function() {
           alert('implemented!');
-        }
+        };
         // then turn array to FunctionStack
-        fns = FunctionStack(fns);
+        window['_namespace'].fns = FunctionStack(window['_namespace'].fns);
       }, 500);
     </script>
   </body>
 </html>
 ```
+
+an important thing to note is that the functions that are coming
+in from the remote script must be available in the global window
+usually recommended to set a namespace for the functions so that
+they don't interfere
