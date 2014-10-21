@@ -49,10 +49,11 @@ FunctionStack.prototype.push = function(fn) {
  * pushHandler
  *
  * function that is invoked when something is pushed
- * to the stack
+ * to the stack pops and calls the function
+ * from the stack
  */
 FunctionStack.prototype.pushHandler = function() {
-  return this.stack.pop()()
+  return this.stack.pop()();
 };
 
 /**
