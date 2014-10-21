@@ -42,6 +42,9 @@ and example html test:
 <html>
   <head>
   <title>A friendly example</title>
+  
+  <!-- need to load FunctionStack -->
+  <script src="fs.min.js"></script>
 </head>
   <body>
     <script>
