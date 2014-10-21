@@ -45,8 +45,9 @@ function testPush(assert) {
   var fn = function() {
     a=1
   };
-  fnStack.push(fn);
+  var ret = fnStack.push(fn);
   assert.equal(a ,1);
+  assert.ok(true, ret);
 }
 
 var tests = [

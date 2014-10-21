@@ -42,12 +42,12 @@ function FunctionStack(fns, lifo) {
 /**
  * add a function to the stack
  * @param fn
- * @returns the element pushed to the stack
+ * @returns bool true if element is 0th in stack and properly popped
  */
 FunctionStack.prototype.push = function(fn) {
   var ret = this.stack.push(fn);
   this.pushHandler();
-  return ret;
+  return ret==0 && !this.stack.length;
 };
 
 /**
