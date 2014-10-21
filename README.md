@@ -80,3 +80,5 @@ an important thing to note is that the functions that are coming
 in from the remote script must be available in the global window
 usually recommended to set a namespace for the functions so that
 they don't interfere
+
+this was designed to be used in an ad serving environment
