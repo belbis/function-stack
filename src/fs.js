@@ -62,17 +62,6 @@ FunctionStack.prototype.pushHandler = function() {
 };
 
 /**
- * unshift
- * @returns {FunctionStack}
- *
- * puts
- */
-FunctionStack.prototype.unshift = function(fn) {
-  this.stack.unshift(fn);
-  this.pushHandler();
-};
-
-/**
  * pop
  *
  * @returns {function}
@@ -82,18 +71,3 @@ FunctionStack.prototype.unshift = function(fn) {
 FunctionStack.prototype.pop = function() {
   return this.stack.pop();
 };
-
-/**
- * shift
- * @returns {*}
- *
- * returns the first element of the stack
- * and resizes
- */
-FunctionStack.prototype.shift = function() {
-  return this.stack.shift();
-};
-
-
-
-module.exports = FunctionStack;
