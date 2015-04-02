@@ -13,6 +13,8 @@ the application use for something like this is a remote script that contains a
 library function needed. create a list of function calls, then when the lib is 
 loaded, run through them
 
+this was inspired by googletag's [command array](https://developers.google.com/doubleclick-gpt/reference#googletag.CommandArray).
+
 
 ex:
 local script
