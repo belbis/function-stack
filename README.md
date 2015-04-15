@@ -76,6 +76,18 @@ and example html test:
 </html>
 ```
 
+inspiration
+-----------
+
+this was inspired by google's command array found in the GPT library
+and as such is released under the apache license. For more information
+see their [documentation](https://developers.google.com/doubleclick-gpt/reference#googletag.CommandArray) on it.
+
+
+
+errata
+------
+
 an important thing to note is that the functions that are coming
 in from the remote script must be available in the global window
 usually recommended to set a namespace for the functions so that
