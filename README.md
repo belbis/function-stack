@@ -78,13 +78,11 @@ and example html test:
 </html>
 ```
 
-inspiration
+license
 -----------
 
-this was inspired by google's command array found in the GPT library
-and as such is released under the apache license. For more information
-see their [documentation](https://developers.google.com/doubleclick-gpt/reference#googletag.CommandArray) on it.
-
+the command array samples are released under apache 2.0 license 
+so this will as well.
 
 
 errata
